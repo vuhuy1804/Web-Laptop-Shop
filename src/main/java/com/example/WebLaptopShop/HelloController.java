@@ -10,4 +10,14 @@ public class HelloController {
     public String hello() {
         return "Hello Spring Boot!";
     }
+
+    @GetMapping("/user")
+    public String userPage() {
+        return "Only user can access this page!";
+    }
+
+    @GetMapping("/admin")
+    public String adninPage() {
+        return "Only admin can access this page!";
+    }
 }
