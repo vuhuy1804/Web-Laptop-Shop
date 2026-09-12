@@ -31,35 +31,28 @@
                                 <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Full Name</th>
                                         <th>Email</th>
+                                        <th>Full Name</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>
-                                            <button class="btn btn-success">View</button>
-                                            <button class="btn btn-warning mx-2">Update</button>
-                                            <button class="btn btn-danger">Delete</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>
-                                            <button class="btn btn-success">View</button>
-                                            <button class="btn btn-warning mx-2">Update</button>
-                                            <button class="btn btn-danger">Delete</button>
-                                        </td>
-                                    </tr>
+                                    <c:forEach var="user" items="${users}">
+                                        <tr>
+                                            <td>${user.id}</td>
+                                            <td>${user.email}</td>
+                                            <td>${user.fullName}</td>
+                                            <td>
+                                                <button class="btn btn-success">View</button>
+                                                <button class="btn btn-warning mx-2">Update</button>
+                                                <button class="btn btn-danger">Delete</button>
+                                            </td>
+                                        </tr>
+                                    </c:forEach>
 
                                 </tbody>
                             </table>
+
                         </div>
                     </div>
                 </div>
