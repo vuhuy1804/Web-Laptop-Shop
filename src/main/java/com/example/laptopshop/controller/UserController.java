@@ -1,5 +1,7 @@
 package com.example.laptopshop.controller;
 
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -22,6 +24,9 @@ public class UserController {
 
     @RequestMapping("/")
     public String getHomePage(Model model) {
+        List<User> arrUsers = this.userService.getAllUsersByEmail("1@gmail.com");
+        System.out.println(arrUsers);
+
         model.addAttribute("hello", "test");
         model.addAttribute("huy", "hello from controller with model");
         return "hello";
