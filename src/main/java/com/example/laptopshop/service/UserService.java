@@ -23,6 +23,10 @@ public class UserService {
         return this.userRepository.findByEmail(email);
     }
 
+    public User getUserById(long id) {
+        return this.userRepository.findById(id);
+    }
+
     public String handleHello() {
         return "hello from service";
     }
@@ -31,5 +35,9 @@ public class UserService {
         User huy = this.userRepository.save(user);
         System.out.println(huy);
         return huy;
+    }
+
+    public void handleDeleteUser(long id) {
+        this.userRepository.deleteById(id);
     }
 }
